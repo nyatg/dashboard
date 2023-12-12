@@ -4,3 +4,57 @@
     margin: 0;
 }
 
+/* header och tid+datum rutan */
+
+header {
+    border: solid purple;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-card {
+    border: solid purple;
+    align-self: center;
+    margin: 1rem;
+}
+
+/* huvudsektionen med alla kort, styling för varje kort + inom korten  */
+main {
+    border: solid purple;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-div {
+align-self: center;
+margin: 1rem;
+}
+
+.card-container {
+    border: solid #800080;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards {
+    border: solid purple;
+    min-width: 20vw;
+    min-height: 40vh;
+}
+
+.link-div {
+    border: solid purple;
+}
+
+/* footern med ruta för att byta till random bg bild  */
+footer {
+    border: solid purple;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-div{
+    align-self: center;
+    border: solid purple;
+    margin: 1rem;
+}
