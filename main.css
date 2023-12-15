@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body {
+background-color: #fcd6e8;
+}
+
 /* header och tid+datum rutan */
 
 header {
@@ -14,8 +18,10 @@ header {
 
 .date-card {
     border: solid purple;
+    border-radius: 10px;
+    background-color: #d38dae;
     align-self: center;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 /* huvudsektionen med alla kort, styling för varje kort + inom korten  */
@@ -23,13 +29,14 @@ main {
     border: solid purple;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4.8rem ;
+    margin-bottom: 1rem;
 }
 
 .header-div {
     align-self: center;
     border: solid purple;
-    margin: 3rem 2rem 2rem;
+    /* margin: 3rem 2rem 2rem; */
+    margin: 40px;
 }
 
 .card-container {
@@ -41,15 +48,24 @@ main {
 
 .cards {
     border: solid purple;
+    background-color: #d38dae;
     border-radius: 20px;
     min-width: 20vw;
     max-height: 40vh;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    align-self: center;
 }
 
 .link-div {
     border: solid purple;
-    margin: 10px 10px 50px;
+    background-color: #fcd6e8;
+    border-radius: 15px;
+    margin: 10px 10px ;
     padding: 2px 0 5px 5px; 
 }
 
@@ -73,5 +89,7 @@ footer {
 .bg-div{
     align-self: center;
     border: solid purple;
+    border-radius: 10px;
     margin: 1rem;
+    background-color: #d38dae;
 }
