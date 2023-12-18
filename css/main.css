@@ -61,6 +61,7 @@ h3 {
     align-self: center;
 }
 
+/* kort för länkar */
 .link-div {
     border: solid purple;
     background-color: #fcd6e8;
@@ -75,10 +76,20 @@ h3 {
     overflow: scroll;
 }
 
+#new-link {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-link > input{
+    border-radius: 5px;
+}
+
 .logo-img{
     max-width: 25px;
     margin-right: 10px;
 }
+
 
 #input-area {
     resize: none;
