@@ -7,8 +7,11 @@ function updateTimeAndDate() {
 
     let hours = now.getHours();
     let minutes = now.getMinutes();
+    
+    let formattedHours = hours < 10 ? "0" + hours : hours;
+    let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
 
-    let currentTime = hours + ":" + minutes;
+    let currentTime = formattedHours + ":" + formattedMinutes;
     timeElement.innerText = currentTime;
 
     let date = now.toDateString();
