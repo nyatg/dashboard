@@ -46,6 +46,7 @@ function addLink() {
 
         publishLinkBtn.addEventListener("click", function () {
             const NewLinkDiv = document.createElement("div");
+            NewLinkDiv.setAttribute("class", "link-div");
             
             const inputUrl = document.getElementById("link-url").value;
             const inputName = document.getElementById("link-name").value;
@@ -56,7 +57,7 @@ function addLink() {
 
             NewLinkDiv.appendChild(newLink);
             linkContainer.appendChild(NewLinkDiv);
-
+            
             linkInput.value = "";
             linkInputName.value = "";
 
