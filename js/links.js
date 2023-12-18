@@ -28,9 +28,22 @@ function addLink() {
         // Knappen för att publicera länkarna i kortet
         const publishLinkBtn = document.createElement("button");
         publishLinkBtn.setAttribute("id", "publishLinkBtn");
-        publishLinkBtn.innerHTML = "Publicera länk";
+        publishLinkBtn.innerHTML = "Spara länk";
         addLinkDiv.appendChild(publishLinkBtn);
-        
+
+    // avbryt knapp (Kan ev. göra den till en img som är x)
+        const cancelBtn = document.createElement("button");
+        cancelBtn.innerHTML = "Avbryt/Klar";
+        addLinkDiv.appendChild(cancelBtn);
+
+        cancelBtn.addEventListener("click", function () {
+            addLinkDiv.removeChild(linkInput);
+            addLinkDiv.removeChild(linkInputName);
+            addLinkDiv.removeChild(publishLinkBtn);
+            addLinkDiv.removeChild(cancelBtn);
+            addLinkBtn.disabled = false;
+        });
+
         publishLinkBtn.addEventListener("click", function () {
             const NewLinkDiv = document.createElement("div");
             
@@ -44,15 +57,17 @@ function addLink() {
             NewLinkDiv.appendChild(newLink);
             linkContainer.appendChild(NewLinkDiv);
 
+            linkInput.value = "";
+            linkInputName.value = "";
+
         });
         
-        addLinkBtn.disabled = true;
+        addLinkBtn.disabled = true;   
     });
 
     // Skapa en koppling till publishLinkBtn som gör att en text skapas som länkar till den sida användaren valt att lägga upp som länk. Behöver brytas upp i två, så skapa två input fält, ett för namn, ett för länk som sedan laddas upp med hjälp av publishLinkBtn.
 
     // Ev. låta användare ladda upp logga till hemsidan
-
     // skapa en funktion som låter användare ta bort länkar de lagt upp tidigare
 };
 
