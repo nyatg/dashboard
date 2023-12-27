@@ -2,6 +2,15 @@ const linkCard = document.getElementsByClassName("link-card");
 // diven för alla länkar
 const linkContainer = document.querySelector(".link-container");
 
+function saveLinksToLocalStorage() {
+    const links = document.querySelectorAll(".link-div a");
+    const linksArray = Array.from(links).map(link => ({
+        href: link.href,
+        text: link.textContent
+    }));
+    localStorage.setItem('savedLinks', JSON.stringify(linksArray));
+};
+
 function addLink() { 
     const addLinkBtn = document.getElementById("add-link");
 
@@ -44,22 +53,37 @@ function addLink() {
             addLinkBtn.disabled = false;
         });
 
+        function createLink(href, text) {
+            const newLink = document.createElement('a');
+            newLink.setAttribute('class', 'link-class');
+            newLink.href = href;
+            newLink.textContent = text;
+            return newLink;
+        }
+
+        function deleteLink() { 
+
+        };
+
         publishLinkBtn.addEventListener("click", function () {
-            const NewLinkDiv = document.createElement("div");
-            NewLinkDiv.setAttribute("class", "link-div");
+            const newLinkDiv = document.createElement("div");
+            newLinkDiv.setAttribute("class", "link-div");
             
             const inputUrl = document.getElementById("link-url").value;
             const inputName = document.getElementById("link-name").value;
 
-            const newLink = document.createElement("a");
-            newLink.href = inputUrl;
-            newLink.innerHTML = inputName;
+            
+            const newLink = createLink(inputUrl, inputName);
+            // newLink.href = inputUrl;
+            // newLink.innerHTML = inputName;
 
-            NewLinkDiv.appendChild(newLink);
-            linkContainer.appendChild(NewLinkDiv);
+            newLinkDiv.appendChild(newLink);
+            linkContainer.appendChild(newLinkDiv);
             
             linkInput.value = "";
             linkInputName.value = "";
+
+            saveLinksToLocalStorage();
 
         });
         
@@ -71,6 +95,37 @@ function addLink() {
     // Ev. låta användare ladda upp logga till hemsidan
     // skapa en funktion som låter användare ta bort länkar de lagt upp tidigare
 };
+
+window.addEventListener('load', function () {
+    const savedLinks = JSON.parse(this.localStorage.getItem('savedLinks'));
+    if (savedLinks) {
+        savedLinks.forEach((link, index) => {
+            const newLink = document.createElement('a');
+            newLink.href = link.href;
+            newLink.textContent = link.text;
+
+            newLink.classList.add('link-class');
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = "x";
+            deleteBtn.addEventListener('click', function () {
+                // Ta bort från DOM
+                linkContainer.removeChild(newLink.parentElement);
+
+                // Ta bort från localstorage
+                savedLinks.splice(index, 1);
+                localStorage.setItem('savedLinks', JSON.stringify(savedLinks));
+            });
+
+            const linkDiv = document.createElement('div');
+            linkDiv.classList.add('link-div');
+            linkDiv.appendChild(newLink);
+            linkDiv.appendChild(deleteBtn);
+
+            linkContainer.appendChild(linkDiv);
+        });
+    }
+});
 
 addLink();
 
