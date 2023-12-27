@@ -62,7 +62,7 @@ h3 {
 }
 
 /* kort för länkar */
-.link-div {
+.link-div, .link-class {
     border: solid purple;
     background-color: #fcd6e8;
     border-radius: 15px;
@@ -76,7 +76,7 @@ h3 {
     overflow: scroll;
 }
 
-#new-link {
+#new-link, .link-class {
     display: flex;
     flex-direction: column;
 }
