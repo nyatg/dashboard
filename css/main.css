@@ -95,6 +95,18 @@ h3 {
     resize: none;
 }
 
+/* Kort för väder */
+.weather-card{
+    border: solid yellow;
+}
+
+.weather-header{
+    border: solid;
+}
+
+.weather {
+    border: solid;
+}
 /* footern med ruta för att byta till random bg bild  */
 footer {
     border: solid purple;
