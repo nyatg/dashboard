@@ -74,8 +74,6 @@ function addLink() {
 
             
             const newLink = createLink(inputUrl, inputName);
-            // newLink.href = inputUrl;
-            // newLink.innerHTML = inputName;
 
             newLinkDiv.appendChild(newLink);
             linkContainer.appendChild(newLinkDiv);
@@ -107,7 +105,8 @@ window.addEventListener('load', function () {
             newLink.classList.add('link-class');
 
             const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = "x";
+            deleteBtn.textContent = "X";
+            deleteBtn.setAttribute('class', 'x-btn');
             deleteBtn.addEventListener('click', function () {
                 // Ta bort från DOM
                 linkContainer.removeChild(newLink.parentElement);
