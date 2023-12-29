@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
                     return response.json();
                 })
                 .then(data => {
-                    const temp = data.main.temp;
+                    const temp = Math.round(data.main.temp);
                     const place = data.name;
                     const icon = data.weather[0].icon;
 
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
 
                     iconImg.src = iconUrl;
                     loc.textContent = `${place}`;
-                    tempC.textContent = `${temp.toFixed(2)} °C`;
+                    tempC.textContent = `${temp} °C`;
                 })
                 .catch(error => {
                     console.log('Fetch error:', error);
