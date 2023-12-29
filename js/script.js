@@ -22,21 +22,25 @@ updateTimeAndDate();
 
 setInterval(updateTimeAndDate, 60000);
 
-// const bgBtn = document.getElementById('bg-btn');
+const bgBtn = document.getElementById('bg-btn');
 
-// bgBtn.addEventListener('click', function () {
-//     let randomNr = Math.floor(Math.random() * 5) + 1;
+bgBtn.addEventListener('click', function () {
+    let randomNr = Math.floor(Math.random() * 5) + 1;
 
-//     console.log(randomNr);
+    console.log(randomNr);
     
-//     if (randomNr == 1) {
-//         document.body.style.backgroundColor = 'green';
-//     } else if (randomNr == 2) {
-//         document.body.style.backgroundColor = 'blue';
-//     } else {
-//         document.body.style.backgroundImage = 'yellow';
-//     }
-// });
+    if (randomNr == 1) {
+        document.body.style.backgroundColor = 'pink';
+    } else if (randomNr == 2) {
+        document.body.style.backgroundColor = 'purple';
+    } else if (randomNr == 3){
+        document.body.style.backgroundColor = 'orange';
+    }
+    else if (randomNr == 4) { document.body.style.backgroundImage = 'white'; }
+    else {
+        document.body.style.backgroundColor = 'brown';
+    }
+});
 
 // const bgBtn = document.getElementById('bg-btn');
 // bgBtn.addEventListener('click', function () {

@@ -92,7 +92,7 @@ h3 {
 
 .link-class{
     padding: 5px 20px;
-    max-width: 50%;
+    max-width: 70%;
 }
 
 .x-btn{
@@ -118,14 +118,14 @@ h3 {
 
 /* Kort för väder */
 .weather-card{
-    border: solid yellow;
+    border: solid purple;
     padding: 5px;
     margin: 0.5em;
     border-radius: 10px;
 }
 
 .weather-header{
-    border: solid;
+
     display: flex;
     flex-wrap: wrap;
 }
