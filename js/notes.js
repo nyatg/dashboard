@@ -5,7 +5,7 @@ function saveNoteToLocalStorage() {
 }
 
 noteArea.addEventListener('input', function () {
-    saveNoteToLocalStorage(); 
+    saveNoteToLocalStorage();
 });
 
 window.addEventListener('load', function () {

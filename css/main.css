@@ -5,13 +5,12 @@
 }
 
 body {
-background-color: #fcd6e8;
+    background-color: #fcd6e8;
 }
 
 /* header och tid+datum rutan */
 
 header {
-    border: solid purple;
     display: flex;
     flex-direction: column;
 }
@@ -32,21 +31,18 @@ header {
 
 /* huvudsektionen med alla kort, styling för varje kort + inom korten  */
 main {
-    border: solid purple;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
 .header-div {
-    align-self: center;
-    /* border: solid purple; */
-    /* margin: 3rem 2rem 2rem; */
+    align-self: center; 
     margin: 40px;
 }
 
 .card-container {
-    /* border: solid #800080; */
+    
     display: flex;
     justify-content: space-around;
     padding: 1rem;
@@ -125,14 +121,12 @@ h3 {
 }
 
 .weather-header{
-
     display: flex;
     flex-wrap: wrap;
 }
 
 /* Kort för API  */
 #kanye {
-    
     border: solid purple;
     border-radius: 10px;
     padding: 5px;
@@ -151,7 +145,6 @@ h3 {
 }
 /* footern med ruta för att byta till random bg bild  */
 footer {
-    border: solid purple;
     display: flex;
     flex-direction: column;
     padding: 4rem;
