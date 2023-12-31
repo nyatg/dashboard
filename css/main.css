@@ -160,7 +160,7 @@ footer {
 }
 
 
-@media (min-width: 360px) {
+@media (min-width: 360px) and (max-width: 720px) {
     .card-container{
         display: flex;
         flex-wrap: wrap;
