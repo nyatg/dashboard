@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/dashboard/css/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="date-card">
+            <p id="time"></p>
+            <p id="date"></p>
+        </div>
+    </header>
+
+    <main>
+        <div class="header-div">
+            <h1>Nyats Dashboard</h1>
+        </div>
+
+        <div class="card-container">
+            <div class="cards" class="link-card">
+                <h3>Snabblänkar</h3>
+                <div class="link-container">
+                </div>
+                <div id="new-link">
+                    <button id="add-link">Lägg till länk</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <h3>Väder</h3>
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <img src="#" alt="väder ikon" id="weather-icon">
+                        <div class="weather">
+                            <div id="location">Hämtar väder...</div>
+                            <div class="c"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards" class="my-card">
+                <h3>Kanye Quote</h3>
+                <div id="kanye">
+
+                </div>
+            </div>
+
+            <div class="cards" class="notes-card">
+                <h3>Anteckningar</h3>
+                <textarea id="input-area" cols="15" rows="20"></textarea>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="bg-div" id="bg-btn">Byt bakgrundsbild</div>
+    </footer>
+
+    <script src="/dashboard/js/script.js"></script>
+    <script src="../js/links.js"></script>
+    <script src="../js/notes.js"></script>
+    <script src="../js/weather.js"></script>
+    <script src="../js/kanye.js"></script>
+</body>
+
+</html>
