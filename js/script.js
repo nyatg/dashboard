@@ -1,4 +1,4 @@
-function updateTimeAndDate() { 
+function updateTimeAndDate() {
     const now = new Date();
 
     let timeElement = document.getElementById("time");
@@ -7,7 +7,7 @@ function updateTimeAndDate() {
 
     let hours = now.getHours();
     let minutes = now.getMinutes();
-    
+
     let formattedHours = hours < 10 ? "0" + hours : hours;
     let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
 
@@ -22,45 +22,22 @@ updateTimeAndDate();
 
 setInterval(updateTimeAndDate, 60000);
 
-// const bgBtn = document.getElementById('bg-btn');
+const bgBtn = document.getElementById('bg-btn');
 
-// bgBtn.addEventListener('click', function () {
-//     let randomNr = Math.floor(Math.random() * 5) + 1;
+bgBtn.addEventListener('click', function () {
+    let randomNr = Math.floor(Math.random() * 5) + 1;
 
-//     console.log(randomNr);
-    
-//     if (randomNr == 1) {
-//         document.body.style.backgroundColor = 'green';
-//     } else if (randomNr == 2) {
-//         document.body.style.backgroundColor = 'blue';
-//     } else {
-//         document.body.style.backgroundImage = 'yellow';
-//     }
-// });
+    console.log(randomNr);
 
-// const bgBtn = document.getElementById('bg-btn');
-// bgBtn.addEventListener('click', function () {
-//     let randomNr = Math.floor(Math.random() * 5) + 1;
-//     let imgUrl;
-
-//     switch (randomNr) {
-//         case 1:
-//             imageUrl = 'url()';
-//             break;
-//         case 2:
-//             imageUrl = 'url()';
-//             break;
-//         case 3:
-//             imageUrl = 'url()';
-//             break;
-//         case 4:
-//             imageUrl = 'url()';
-//             break;
-//         case 5:
-//             imageUrl = 'url()';
-//         default:
-//             imgUrl = 'url()';
-//             break;
-//     }
-//     document.body.style.backgroundImage = imgUrl;
-// });
+    if (randomNr == 1) {
+        document.body.style.backgroundColor = 'pink';
+    } else if (randomNr == 2) {
+        document.body.style.backgroundColor = 'purple';
+    } else if (randomNr == 3) {
+        document.body.style.backgroundColor = 'orange';
+    }
+    else if (randomNr == 4) { document.body.style.backgroundImage = 'white'; }
+    else {
+        document.body.style.backgroundColor = 'brown';
+    }
+});
