@@ -22,6 +22,62 @@ updateTimeAndDate();
 
 setInterval(updateTimeAndDate, 60000);
 
+let rubrik = document.getElementById('rubrik');
+const headerDiv = document.getElementById('header-div');
+
+function nyRubrik() {
+    
+    const newH1 = document.createElement('input');
+    newH1.setAttribute('placeholder', rubrik.innerText);
+    newH1.style.display = 'none';
+    
+    const headerBtn = document.createElement('button');
+    headerBtn.setAttribute('id', 'change-btn');
+    headerBtn.innerText = 'ändra rubrik';
+    headerBtn.style.display = 'none';
+
+    let isVisible = false;
+
+    rubrik.addEventListener('click', function () {
+       
+        if (!isVisible) {
+            headerBtn.style.display = 'inline-block'; 
+            newH1.style.display = 'inline-block'; // 
+        } else {
+            headerBtn.style.display = 'none'; 
+            newH1.style.display = 'none'; 
+        }
+        isVisible = !isVisible;
+    });
+
+    headerBtn.addEventListener('click', function () {
+        let newH1Value = newH1.value;
+        rubrik.textContent = newH1Value;
+        localStorage.setItem('rubrikText', newH1Value);
+
+       
+        headerBtn.style.display = 'none';
+        newH1.style.display = 'none';
+
+        isVisible = false; 
+    });
+
+    
+        headerDiv.appendChild(headerBtn);
+        headerDiv.appendChild(newH1);
+ 
+        console.log('hej');
+
+        const savedText = localStorage.getItem('rubrikText');
+
+        if (savedText) {
+            rubrik.textContent = savedText;
+            newH1.value = savedText;
+        }
+    };
+
+nyRubrik();
+
 const bgBtn = document.getElementById('bg-btn');
 
 bgBtn.addEventListener('click', function () {
