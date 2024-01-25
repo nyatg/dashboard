@@ -80,20 +80,43 @@ nyRubrik();
 
 const bgBtn = document.getElementById('bg-btn');
 
-bgBtn.addEventListener('click', function () {
-    let randomNr = Math.floor(Math.random() * 5) + 1;
+// bgBtn.addEventListener('click', function () {
+//     let randomNr = Math.floor(Math.random() * 5) + 1;
 
-    console.log(randomNr);
+//     console.log(randomNr);
 
-    if (randomNr == 1) {
-        document.body.style.backgroundColor = 'pink';
-    } else if (randomNr == 2) {
-        document.body.style.backgroundColor = 'purple';
-    } else if (randomNr == 3) {
-        document.body.style.backgroundColor = 'orange';
-    }
-    else if (randomNr == 4) { document.body.style.backgroundImage = 'white'; }
-    else {
-        document.body.style.backgroundColor = 'brown';
-    }
-});
+//     if (randomNr == 1) {
+//         document.body.style.backgroundColor = 'pink';
+//     } else if (randomNr == 2) {
+//         document.body.style.backgroundColor = 'purple';
+//     } else if (randomNr == 3) {
+//         document.body.style.backgroundColor = 'orange';
+//     }
+//     else if (randomNr == 4) { document.body.style.backgroundImage = 'white'; }
+//     else {
+//         document.body.style.backgroundColor = 'brown';
+//     }
+// });
+
+
+//API-key const key = "g__nHTGlioJ2BTBV2LPErg3NY5yltvGsDQau_8t659s"; //API url const apiUrl = `https://api.unsplash.com/photos/random?client_id=${}`;
+
+
+// API - key
+const key = "g__nHTGlioJ2BTBV2LPErg3NY5yltvGsDQau_8t659s";
+//API url
+const apiUrl = `https://api.unsplash.com/photos/random?client_id=${key}`;
+
+async function getRandom() {
+
+    const response = await fetch(apiUrl);
+    console.log(response);
+    const data = await response.json();
+    const Image = data.urls.full;
+    // document.body.style.backgroundImage = `url('${Image}')`
+    document.body.style.backgroundImage = `url('${Image}')`;
+   
+}
+
+
+bgBtn.addEventListener('click', getRandom);
